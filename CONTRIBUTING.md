@@ -42,6 +42,16 @@
 
 Никаких токенов и secrets не нужно — достаточно включить Pages в настройках репозитория (**Settings → Pages → Build and deployment → Source: GitHub Actions**), если это ещё не сделано.
 
+#### Первый запуск (один раз)
+
+Деплой упадёт с ошибкой `404`, пока Pages не включён. Сделайте один раз:
+
+1. Откройте [настройки Pages](https://github.com/vutratenko/s95-kb/settings/pages)
+2. **Build and deployment → Source** → выберите **GitHub Actions**
+3. Перезапустите workflow: [Deploy GitHub Pages → Run workflow](https://github.com/vutratenko/s95-kb/actions/workflows/deploy-pages.yml)
+
+После этого сайт появится по адресу выше (обычно через 1–2 минуты).
+
 ### Другие варианты публикации
 
 | Способ | Плюсы | Минусы | Когда использовать |
