@@ -68,3 +68,43 @@
 | [videographer.md](roles/videographer.md) | Видеограф |
 | [designer.md](roles/designer.md) | Дизайнер |
 | [event_preparation.md](roles/event_preparation.md) | Подготовка забега |
+
+## Статический хостинг на GitHub Gist
+
+При каждом push в `main` GitHub Actions собирает HTML-версию базы знаний и публикует её в [GitHub Gist](https://gist.github.com/).
+
+### Настройка (один раз)
+
+1. Создайте **публичный** gist на [gist.github.com](https://gist.github.com/) — можно с любым файлом-заглушкой.
+2. Скопируйте **ID** gist из адреса: `https://gist.github.com/<user>/<gist_id>`.
+3. Создайте [Personal Access Token](https://github.com/settings/tokens) с правом `gist`.
+4. В настройках репозитория (**Settings → Secrets and variables → Actions**) добавьте секреты:
+   - `GIST_TOKEN` — токен с правом `gist`
+   - `GIST_ID` — ID gist
+
+После следующего push в `main` workflow обновит gist автоматически.
+
+### Просмотр сайта
+
+GitHub отдаёт HTML из gist как исходный текст, поэтому для просмотра в браузере используйте превью:
+
+```
+https://htmlpreview.github.io/?https://gist.githubusercontent.com/<user>/<gist_id>/raw/index.html
+```
+
+Замените `<user>` и `<gist_id>` на свои значения. Ссылку на gist можно также взять в логах workflow после успешного деплоя.
+
+### Локальная сборка
+
+```bash
+pip install -r scripts/requirements.txt
+python scripts/build_static.py
+```
+
+Готовый сайт появится в каталоге `dist/`. Для ручной публикации:
+
+```bash
+export GIST_TOKEN=...
+export GIST_ID=...
+python scripts/publish_gist.py
+```
