@@ -2,7 +2,7 @@
 
 Волонтёры — основа проведения всех мероприятий parkrun. Они выполняют такие роли, как подготовка события, маршалинг, хронометраж, сканирование, раздача финишных жетонов или tail walking, и это лишь часть списка.
 
-Мы призываем каждое мероприятие привлекать как можно больше волонтёров и никогда не отказывать тем, кто предлагает помощь. На трассе никогда не бывает слишком много маршалов, а несколько Tail Walker могут сделать событие ещё веселее!
+Мы призываем каждое мероприятие привлекать как можно больше волонтёров и никогда не отказывать тем, кто предлагает помощь. На трассе никогда не бывает слишком много [маршалов](../roles/marshal.md), а несколько [Tail Walker](../roles/tail-walker.md) могут сделать событие ещё веселее!
 
 При этом не должно быть давления на участников parkrun с целью заставить их волонтёрить. Хотя роли в расписании нужно заполнять каждую неделю, мы просим людей помогать тогда, когда им этого хочется, а команды мероприятий — создавать атмосферу, в которой люди чувствуют себя желанными, включёнными и поддержанными.
 
@@ -12,39 +12,39 @@
 
 ## Обязательные роли
 
-- Run Director (директор забега)
-- First Timers Welcome (встреча новичков)
-- Event Day Course Check (проверка трассы в день мероприятия)
-- Timekeeper(s) (хронометрист(ы))
-- Finish Tokens (финишные жетоны)
-- Barcode Scanner(s) (сканер(ы) штрихкодов)
-- Tail Walker (сопровождающий замыкающих)
-- Marshal(s) (маршал(ы)) — где это указано в оценке рисков мероприятия
+- [Run Director (директор забега)](../roles/run-director.md)
+- [First Timers Welcome (встреча новичков)](../roles/first-timers-welcome.md)
+- [Event Day Course Check (проверка трассы в день мероприятия)](../roles/event-day-course-check.md)
+- [Timekeeper (хронометрист)](../roles/timekeeper.md)
+- [Finish Tokens (финишные жетоны)](../roles/finish-tokens.md)
+- [Barcode Scanner (сканер штрихкодов)](../roles/barcode-scanner.md)
+- [Tail Walker (сопровождающий замыкающих)](../roles/tail-walker.md)
+- [Marshal (маршал)](../roles/marshal.md) — где это указано в оценке рисков мероприятия
 
 ## Дополнительные обязательные роли на junior parkrun
 
-- Marshal(s) (маршал(ы))
-- Warm-up Leader (ведущий разминки)
+- [Marshal (маршал)](../roles/marshal.md)
+- [Warm-up Leader (ведущий разминки)](../roles/warm-up-leader.md)
 
 ## Другие возможности для волонтёрства
 
-- Marshal(s) (маршал(ы))
-- parkwalker (должна использоваться на всех мероприятиях, если волонтёр предлагает parkwalk)
-- Funnel Manager (менеджер финишного коридора)
-- Car Park Marshal (маршал парковки)
-- Equipment Storage and Delivery (хранение и доставка оборудования)
-- Report Writer (автор отчёта)
-- Finish Token Support (помощник по финишным жетонам)
-- Number Checker (проверяющий номера)
-- Pacer(s) (сопровождающий(ие) группы) — только на 5k-мероприятиях
-- Photographer (фотограф)
-- Post-event Close Down (закрытие после мероприятия)
-- Pre-event Set-up (подготовка до мероприятия)
-- Results Processor (обработчик результатов)
-- Sign Language Support (поддержка жестового языка)
-- Token Sorting (сортировка жетонов)
-- VI Guide (сопровождающий людей с нарушениями зрения)
-- Volunteer Coordinator (координатор волонтёров)
+- [Marshal (маршал)](../roles/marshal.md)
+- [parkwalker](../roles/parkwalker.md) (должна использоваться на всех мероприятиях, если волонтёр предлагает parkwalk)
+- [Funnel Manager (менеджер финишного коридора)](../roles/funnel-manager.md)
+- [Car Park Marshal (маршал парковки)](../roles/car-park-marshal.md)
+- [Equipment Storage and Delivery (хранение и доставка оборудования)](../roles/equipment-storage-and-delivery.md)
+- [Report Writer (автор отчёта)](../roles/report-writer.md)
+- [Finish Token Support (помощник по финишным жетонам)](../roles/finish-token-support.md)
+- [Number Checker (проверяющий номера)](../roles/number-checker.md)
+- [Pacer (сопровождающий группы)](../roles/pacer.md) — только на 5k-мероприятиях
+- [Photographer (фотограф)](../roles/photographer.md)
+- [Post-event Close Down (закрытие после мероприятия)](../roles/post-event-close-down.md)
+- [Pre-event Set-up (подготовка до мероприятия)](../roles/pre-event-setup.md)
+- [Results Processor (обработчик результатов)](../roles/results-processor.md)
+- [Sign Language Support (поддержка жестового языка)](../roles/sign-language-support.md)
+- [Token Sorting (сортировка жетонов)](../roles/token-sorting.md)
+- [VI Guide (сопровождающий людей с нарушениями зрения)](../roles/vi-guide.md)
+- [Volunteer Coordinator (координатор волонтёров)](../roles/volunteer-coordinator.md)
 
 ## Общие рекомендации для волонтёров
 
@@ -59,3 +59,11 @@
 У parkrun есть специальная видеосерия о волонтёрстве, которая помогает командам мероприятий показать сообществу, насколько приятным и простым может быть волонтёрство. Эти видео — инструмент, чтобы вдохновлять, увлекать, обучать и приглашать всех участвовать в волонтёрстве на parkrun.
 
 В день мероприятия возможностей для волонтёрства много и они разнообразны. Некоторые роли обязательны и поэтому присутствуют на всех мероприятиях parkrun, чтобы обеспечить безопасное и своевременное проведение событий; другие роли могут зависеть от наличия волонтёров или потребностей мероприятия.
+
+## См. также
+
+- [Event Director (директор мероприятия)](../roles/event-director.md)
+- [Communications Person (ответственный за коммуникации)](../roles/communications-person.md)
+- [Мониторинг волонтёрских ролей](volunteer-role-monitoring.md)
+- [Незарегистрированные волонтёры](unregistered-volunteers.md)
+- [Предоставление рекомендаций для волонтёров](providing-references.md)

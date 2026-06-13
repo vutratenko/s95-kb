@@ -12,3 +12,15 @@ Run Director также приветствует всех участников p
 - Run Director не должен участвовать в забеге или выполнять другую волонтёрскую роль во время проведения мероприятия.
 
 **Категория:** обязательная роль
+
+## См. также
+
+- [Общее описание волонтёрства](../general/overview.md)
+- [Event Director (директор мероприятия)](event-director.md)
+- [First Timers Welcome (встреча новичков)](first-timers-welcome.md)
+- [Event Day Course Check (проверка трассы)](event-day-course-check.md)
+- [Pre-event Set-up (подготовка до мероприятия)](pre-event-setup.md)
+- [Car Park Marshal (маршал парковки)](car-park-marshal.md)
+- [Photographer (фотограф)](photographer.md)
+- [Marshal (маршал)](marshal.md)
+- [Незарегистрированные волонтёры](../general/unregistered-volunteers.md)
