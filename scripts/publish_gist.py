@@ -11,6 +11,34 @@ import urllib.request
 from pathlib import Path
 
 DIST = Path(__file__).resolve().parent.parent / "dist"
+BATCH_SIZE = 10
+
+
+def gist_request(
+    gist_id: str,
+    gist_token: str,
+    payload: dict,
+) -> dict:
+    request = urllib.request.Request(
+        f"https://api.github.com/gists/{gist_id}",
+        data=json.dumps(payload).encode("utf-8"),
+        headers={
+            "Authorization": f"Bearer {gist_token}",
+            "Accept": "application/vnd.github+json",
+            "Content-Type": "application/json",
+            "X-GitHub-Api-Version": "2022-11-28",
+            "User-Agent": "s95-kb-publish",
+        },
+        method="PATCH",
+    )
+
+    with urllib.request.urlopen(request) as response:
+        return json.load(response)
+
+
+def validate_filename(name: str) -> None:
+    if "/" in name or "\\" in name or name in {".", ".."}:
+        raise ValueError(f"Недопустимое имя файла для Gist: {name}")
 
 
 def main() -> None:
@@ -32,32 +60,31 @@ def main() -> None:
     for path in sorted(DIST.rglob("*")):
         if path.is_file():
             rel = path.relative_to(DIST).as_posix()
+            validate_filename(rel)
             files[rel] = {"content": path.read_text(encoding="utf-8")}
 
-    payload = {
-        "description": "С95 — статическая база знаний волонтёров",
-        "files": files,
-    }
+    file_items = list(files.items())
+    data: dict | None = None
 
-    request = urllib.request.Request(
-        f"https://api.github.com/gists/{gist_id}",
-        data=json.dumps(payload).encode("utf-8"),
-        headers={
-            "Authorization": f"Bearer {gist_token}",
-            "Accept": "application/vnd.github+json",
-            "Content-Type": "application/json",
-            "X-GitHub-Api-Version": "2022-11-28",
-            "User-Agent": "s95-kb-publish",
-        },
-        method="PATCH",
-    )
+    for start in range(0, len(file_items), BATCH_SIZE):
+        batch = dict(file_items[start : start + BATCH_SIZE])
+        payload = {
+            "description": "С95 — статическая база знаний волонтёров",
+            "files": batch,
+        }
+        try:
+            data = gist_request(gist_id, gist_token, payload)
+        except urllib.error.HTTPError as exc:
+            body = exc.read().decode("utf-8", errors="replace")
+            names = ", ".join(batch)
+            print(
+                f"Ошибка публикации в Gist ({exc.code}) для файлов: {names}\n{body}",
+                file=sys.stderr,
+            )
+            sys.exit(1)
 
-    try:
-        with urllib.request.urlopen(request) as response:
-            data = json.load(response)
-    except urllib.error.HTTPError as exc:
-        body = exc.read().decode("utf-8", errors="replace")
-        print(f"Ошибка публикации в Gist ({exc.code}): {body}", file=sys.stderr)
+    if data is None:
+        print("Нет файлов для публикации.", file=sys.stderr)
         sys.exit(1)
 
     owner = data["owner"]["login"]

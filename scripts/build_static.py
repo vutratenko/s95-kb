@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import re
 import shutil
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 import markdown
 
@@ -15,28 +15,39 @@ STATIC = ROOT / "static"
 
 MARKDOWN_SOURCES = [
     (ROOT / "README.md", DIST / "index.html"),
-    (ROOT / "general" / "overview.md", DIST / "general" / "overview.html"),
+    (ROOT / "general" / "overview.md", DIST / "general-overview.html"),
     *(
-        (path, DIST / "roles" / f"{path.stem}.html")
+        (path, DIST / f"roles-{path.stem}.html")
         for path in sorted((ROOT / "roles").glob("*.md"))
     ),
 ]
 
-LINK_PATTERN = re.compile(r"(\[[^\]]*\]\([^)#]+)\.md([^)]*\))")
+LINK_PATTERN = re.compile(r"(\[[^\]]*\]\()([^)#]+)\.md([^)]*\))")
+
+
+def to_flat_html(md_path: str) -> str:
+    path, anchor = (md_path.split("#", 1) + [""])[:2]
+    anchor = f"#{anchor}" if anchor else ""
+
+    normalized = PurePosixPath(path.strip().lstrip("./"))
+    while normalized.parts and normalized.parts[0] == "..":
+        normalized = PurePosixPath(*normalized.parts[1:])
+
+    if normalized.name in {"README.md", "readme.md"}:
+        return f"index.html{anchor}"
+
+    stem = normalized.stem
+    if normalized.parts and normalized.parts[0] == "general":
+        return f"general-{stem}.html{anchor}"
+
+    return f"roles-{stem}.html{anchor}"
 
 
 def rewrite_links(text: str) -> str:
-    return LINK_PATTERN.sub(r"\1.html\2", text)
-
-
-def css_href(output_path: Path) -> str:
-    depth = len(output_path.relative_to(DIST).parts) - 1
-    return f"{'../' * depth}style.css"
-
-
-def home_href(output_path: Path) -> str:
-    depth = len(output_path.relative_to(DIST).parts) - 1
-    return f"{'../' * depth}index.html"
+    return LINK_PATTERN.sub(
+        lambda match: f"{match.group(1)}{to_flat_html(match.group(2))}{match.group(3)}",
+        text,
+    )
 
 
 def page_title(source: Path, body_html: str) -> str:
@@ -48,7 +59,6 @@ def page_title(source: Path, body_html: str) -> str:
 
 def render_page(source: Path, output: Path, body_html: str) -> None:
     title = page_title(source, body_html)
-    output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(
         f"""<!DOCTYPE html>
 <html lang="ru">
@@ -56,12 +66,12 @@ def render_page(source: Path, output: Path, body_html: str) -> None:
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title} — С95</title>
-  <link rel="stylesheet" href="{css_href(output)}">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="{home_href(output)}">С95 · База знаний волонтёров</a>
+      <a class="brand" href="index.html">С95 · База знаний волонтёров</a>
     </div>
   </header>
   <main class="container content">
