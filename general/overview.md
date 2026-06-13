@@ -1,50 +1,46 @@
-# 3.2 Чем занимаются волонтёры?
+# Волонтёрство на С95
 
-Волонтёры — основа проведения всех мероприятий parkrun. Они выполняют такие роли, как подготовка события, маршалинг, хронометраж, сканирование, раздача финишных жетонов или tail walking, и это лишь часть списка.
+Волонтёры — основа проведения всех забегов С95. Они выполняют такие роли, как подготовка мероприятия, маршалинг, хронометраж, сканирование, раздача финишных карточек или сопровождение замыкающих, и это лишь часть списка.
 
-Мы призываем каждое мероприятие привлекать как можно больше волонтёров и никогда не отказывать тем, кто предлагает помощь. На трассе никогда не бывает слишком много [маршалов](../roles/marshal.md), а несколько [Tail Walker](../roles/tail-walker.md) могут сделать событие ещё веселее!
+Мы призываем каждое мероприятие привлекать как можно больше волонтёров и никогда не отказывать тем, кто предлагает помощь. На трассе никогда не бывает слишком много [маршалов](../roles/marshal.md), а несколько [замыкающих](../roles/event_closer.md) могут сделать забег ещё веселее!
 
-При этом не должно быть давления на участников parkrun с целью заставить их волонтёрить. Хотя роли в расписании нужно заполнять каждую неделю, мы просим людей помогать тогда, когда им этого хочется, а команды мероприятий — создавать атмосферу, в которой люди чувствуют себя желанными, включёнными и поддержанными.
+При этом не должно быть давления на участников с целью заставить их волонтёрить. Хотя роли в расписании нужно заполнять каждую неделю, мы просим людей помогать тогда, когда им этого хочется, а команды мероприятий — создавать атмосферу, в которой люди чувствуют себя желанными, включёнными и поддержанными.
 
-По опыту мы знаем, что одни будут волонтёрить регулярно, а другие — редко или никогда. Командам мероприятий важно помнить: волонтёрство — это выбор, и всем рады на parkrun независимо от того, волонтёрит человек или нет. Если мероприятию сложно заполнить роли в расписании или нужны идеи, как привлечь волонтёров, следует обратиться к своему Ambassador или написать на eventsupport@parkrun.com.
+По опыту мы знаем, что одни будут волонтёрить регулярно, а другие — редко или никогда. Командам мероприятий важно помнить: волонтёрство — это выбор, и всем рады на С95 независимо от того, волонтёрит человек или нет.
 
 Волонтёрам разрешено приходить с детьми. Однако дети могут отвлекать, а волонтёры могут оказаться в сложных ситуациях, поэтому волонтёры должны постоянно помнить об этом.
 
-## Обязательные роли
+## Роли волонтёров
 
-- [Run Director (директор забега)](../roles/run-director.md)
-- [First Timers Welcome (встреча новичков)](../roles/first-timers-welcome.md)
-- [Event Day Course Check (проверка трассы в день мероприятия)](../roles/event-day-course-check.md)
-- [Timekeeper (хронометрист)](../roles/timekeeper.md)
-- [Finish Tokens (финишные жетоны)](../roles/finish-tokens.md)
-- [Barcode Scanner (сканер штрихкодов)](../roles/barcode-scanner.md)
-- [Tail Walker (сопровождающий замыкающих)](../roles/tail-walker.md)
-- [Marshal (маршал)](../roles/marshal.md) — где это указано в оценке рисков мероприятия
+Полный перечень ролей соответствует [системе Sat_9am_5km](https://github.com/vol1ura/Sat_9am_5km) (25 позиций):
 
-## Дополнительные обязательные роли на junior parkrun
-
-- [Marshal (маршал)](../roles/marshal.md)
-- [Warm-up Leader (ведущий разминки)](../roles/warm-up-leader.md)
-
-## Другие возможности для волонтёрства
-
-- [Marshal (маршал)](../roles/marshal.md)
-- [parkwalker](../roles/parkwalker.md) (должна использоваться на всех мероприятиях, если волонтёр предлагает parkwalk)
-- [Funnel Manager (менеджер финишного коридора)](../roles/funnel-manager.md)
-- [Car Park Marshal (маршал парковки)](../roles/car-park-marshal.md)
-- [Equipment Storage and Delivery (хранение и доставка оборудования)](../roles/equipment-storage-and-delivery.md)
-- [Report Writer (автор отчёта)](../roles/report-writer.md)
-- [Finish Token Support (помощник по финишным жетонам)](../roles/finish-token-support.md)
-- [Number Checker (проверяющий номера)](../roles/number-checker.md)
-- [Pacer (сопровождающий группы)](../roles/pacer.md) — только на 5k-мероприятиях
-- [Photographer (фотограф)](../roles/photographer.md)
-- [Post-event Close Down (закрытие после мероприятия)](../roles/post-event-close-down.md)
-- [Pre-event Set-up (подготовка до мероприятия)](../roles/pre-event-setup.md)
-- [Results Processor (обработчик результатов)](../roles/results-processor.md)
-- [Sign Language Support (поддержка жестового языка)](../roles/sign-language-support.md)
-- [Token Sorting (сортировка жетонов)](../roles/token-sorting.md)
-- [VI Guide (сопровождающий людей с нарушениями зрения)](../roles/vi-guide.md)
-- [Volunteer Coordinator (координатор волонтёров)](../roles/volunteer-coordinator.md)
+| Slug | Роль |
+|------|------|
+| `director` | [Директор](../roles/director.md) |
+| `marshal` | [Маршал](../roles/marshal.md) |
+| `timer` | [Секундомер](../roles/timer.md) |
+| `photograph` | [Фотограф](../roles/photograph.md) |
+| `tokens` | [Раздача карточек позиций](../roles/tokens.md) |
+| `scanner` | [Сканер](../roles/scanner.md) |
+| `instructor` | [Инструктаж новичков](../roles/instructor.md) |
+| `marking_maker` | [Разметка трассы](../roles/marking_maker.md) |
+| `event_closer` | [Замыкающий](../roles/event_closer.md) |
+| `marking_picker` | [Сбор разметки](../roles/marking_picker.md) |
+| `cards_sorter` | [Сортировка карточек](../roles/cards_sorter.md) |
+| `bike_leader` | [Ведущий велосипед](../roles/bike_leader.md) |
+| `pacemaker` | [Пейсмейкер](../roles/pacemaker.md) |
+| `results_handler` | [Обработка результатов](../roles/results_handler.md) |
+| `equipment_supplier` | [Доставка оборудования](../roles/equipment_supplier.md) |
+| `public_relations` | [Связи с общественностью](../roles/public_relations.md) |
+| `warm_up` | [Проведение разминки](../roles/warm_up.md) |
+| `other` | [Разное](../roles/other.md) |
+| `attendant` | [Сопровождающий](../roles/attendant.md) |
+| `finish_maker` | [Организация финиша](../roles/finish_maker.md) |
+| `volunteer_coordinator` | [Координатор волонтёров](../roles/volunteer_coordinator.md) |
+| `food_maker` | [Организация питания](../roles/food_maker.md) |
+| `videographer` | [Видеограф](../roles/videographer.md) |
+| `designer` | [Дизайнер](../roles/designer.md) |
+| `event_preparation` | [Подготовка забега](../roles/event_preparation.md) |
 
 ## Общие рекомендации для волонтёров
 
@@ -52,18 +48,32 @@
 
 - Носить волонтёрский жилет, чтобы их было легко узнать как людей, которые могут помочь.
 - Внимательно наблюдать за приходящими и искать тех, кто здесь впервые; они могут выглядеть растерянными и не знать, что делать.
-- Тепло приветствовать людей, спрашивать, откуда они и что привело их на parkrun.
+- Тепло приветствовать людей, спрашивать, откуда они и что привело их на С95.
 
-## Видеосерия о волонтёрстве
+## Соответствие с оригинальной статьёй о волонтёрстве
 
-У parkrun есть специальная видеосерия о волонтёрстве, которая помогает командам мероприятий показать сообществу, насколько приятным и простым может быть волонтёрство. Эти видео — инструмент, чтобы вдохновлять, увлекать, обучать и приглашать всех участвовать в волонтёрстве на parkrun.
+| Оригинал (Volunteer Hub) | С95 (`Sat_9am_5km`) |
+|--------------------------|---------------------|
+| Run Director | `director` |
+| Marshal | `marshal` |
+| Timekeeper | `timer` |
+| Photographer | `photograph` |
+| Finish Tokens | `tokens` |
+| Barcode Scanner | `scanner` |
+| First Timers Welcome | `instructor` |
+| Pre-event Set-up (разметка) | `marking_maker` |
+| Tail Walker | `event_closer` |
+| Post-event Close Down (сбор разметки) | `marking_picker` |
+| Token Sorting | `cards_sorter` |
+| Pacer | `pacemaker` |
+| Results Processor | `results_handler` |
+| Equipment Storage and Delivery | `equipment_supplier` |
+| Communications Person | `public_relations` |
+| Warm-up Leader | `warm_up` |
+| Funnel Manager | `finish_maker` |
+| Volunteer Coordinator | `volunteer_coordinator` |
+| parkwalker | `attendant` |
+| Pre-event Set-up (общая подготовка) | `event_preparation` |
+| — | `bike_leader`, `food_maker`, `videographer`, `designer`, `other` |
 
-В день мероприятия возможностей для волонтёрства много и они разнообразны. Некоторые роли обязательны и поэтому присутствуют на всех мероприятиях parkrun, чтобы обеспечить безопасное и своевременное проведение событий; другие роли могут зависеть от наличия волонтёров или потребностей мероприятия.
-
-## См. также
-
-- [Event Director (директор мероприятия)](../roles/event-director.md)
-- [Communications Person (ответственный за коммуникации)](../roles/communications-person.md)
-- [Мониторинг волонтёрских ролей](volunteer-role-monitoring.md)
-- [Незарегистрированные волонтёры](unregistered-volunteers.md)
-- [Предоставление рекомендаций для волонтёров](providing-references.md)
+Роли parkrun, не используемые в С95: Event Director, Event Day Course Check, Finish Token Support, Number Checker, Sign Language Support, VI Guide, Car Park Marshal, Report Writer.
