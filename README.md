@@ -69,42 +69,38 @@
 | [designer.md](roles/designer.md) | Дизайнер |
 | [event_preparation.md](roles/event_preparation.md) | Подготовка забега |
 
-## Статический хостинг на GitHub Gist
+## Сайт
 
-При каждом push в `main` GitHub Actions собирает HTML-версию базы знаний и публикует её в [GitHub Gist](https://gist.github.com/).
+**Рекомендуемый способ** — [GitHub Pages](https://pages.github.com/). При каждом push в `main` сайт собирается и публикуется автоматически:
 
-### Быстрая настройка одной командой
+**https://vutratenko.github.io/s95-kb/**
 
-Если у вас есть [Personal Access Token](https://github.com/settings/tokens) с правом `gist`, выполните в корне репозитория:
+Никаких токенов и secrets не нужно — достаточно включить Pages в настройках репозитория (**Settings → Pages → Build and deployment → Source: GitHub Actions**), если это ещё не сделано.
 
-```bash
-export GITHUB_TOKEN=ghp_ваш_токен
-chmod +x scripts/setup_gist.sh
-./scripts/setup_gist.sh
-```
+### Другие варианты публикации
 
-Скрипт создаст gist, опубликует сайт и попытается добавить `GIST_TOKEN` и `GIST_ID` в secrets репозитория.
+| Способ | Плюсы | Минусы | Когда использовать |
+|--------|-------|--------|-------------------|
+| **GitHub Pages** | Настоящий сайт по URL, бесплатно, без токенов | Нужен публичный репозиторий (или GitHub Pro для private) | **Основной вариант** |
+| **Gist + HTML Preview** | Быстро, без настройки Pages | Не настоящий сайт, кривые URL, нужен токен `gist` | Запасной / встраивание |
+| **Локально (`dist/`)** | Мгновенно, офлайн | Только у вас на компьютере | Разработка и проверка |
+| **Cloudflare Pages / Netlify** | Свой домен, CDN | Отдельный сервис и настройка | Если нужен кастомный домен |
 
-### Настройка вручную
+### Gist (запасной вариант)
 
-1. Создайте **публичный** gist на [gist.github.com](https://gist.github.com/) — можно с любым файлом-заглушкой.
-2. Скопируйте **ID** gist из адреса: `https://gist.github.com/<user>/<gist_id>`.
-3. Создайте [Personal Access Token](https://github.com/settings/tokens) с правом `gist`.
-4. В настройках репозитория (**Settings → Secrets and variables → Actions**) добавьте секреты:
-   - `GIST_TOKEN` — токен с правом `gist`
-   - `GIST_ID` — ID gist
-
-После следующего push в `main` workflow обновит gist автоматически.
-
-### Просмотр сайта
-
-GitHub отдаёт HTML из gist как исходный текст, поэтому для просмотра в браузере используйте превью:
+Если нужен именно gist, ссылка для просмотра выглядит **не** как `gist.github.com/...`, а так:
 
 ```
-https://htmlpreview.github.io/?https://gist.githubusercontent.com/<user>/<gist_id>/raw/index.html
+https://htmlpreview.github.io/?https://gist.githubusercontent.com/vutratenko/f68341ac2d207e354fca576764e428c8/raw/index.html
 ```
 
-Замените `<user>` и `<gist_id>` на свои значения. Ссылку на gist можно также взять в логах workflow после успешного деплоя.
+Важно: в URL должен быть `gist.githubusercontent.com/.../raw/index.html`, а не страница gist.
+
+Настройка gist (если используете workflow `Deploy to Gist`):
+
+1. Создайте [Personal Access Token](https://github.com/settings/tokens) с правом `gist`.
+2. Добавьте secrets `GIST_TOKEN` и `GIST_ID` в репозиторий.
+3. Или выполните `./scripts/setup_gist.sh`.
 
 ### Локальная сборка
 
