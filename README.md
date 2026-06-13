@@ -73,7 +73,19 @@
 
 При каждом push в `main` GitHub Actions собирает HTML-версию базы знаний и публикует её в [GitHub Gist](https://gist.github.com/).
 
-### Настройка (один раз)
+### Быстрая настройка одной командой
+
+Если у вас есть [Personal Access Token](https://github.com/settings/tokens) с правом `gist`, выполните в корне репозитория:
+
+```bash
+export GITHUB_TOKEN=ghp_ваш_токен
+chmod +x scripts/setup_gist.sh
+./scripts/setup_gist.sh
+```
+
+Скрипт создаст gist, опубликует сайт и попытается добавить `GIST_TOKEN` и `GIST_ID` в secrets репозитория.
+
+### Настройка вручную
 
 1. Создайте **публичный** gist на [gist.github.com](https://gist.github.com/) — можно с любым файлом-заглушкой.
 2. Скопируйте **ID** gist из адреса: `https://gist.github.com/<user>/<gist_id>`.
